@@ -68,4 +68,4 @@ function withdraw(account, amount) {
   account.total -= amount;
 }
 // React is pretty flexible but it has a single strict rule:
-// All React components must act like pure functions with respect to their props.
+// ** All React components must act like pure functions with respect to their props.
