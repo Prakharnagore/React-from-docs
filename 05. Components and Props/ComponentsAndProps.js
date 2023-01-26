@@ -55,7 +55,7 @@ function App() {
 
 
 // 04
-// Props are Read-Only
+// ** Props are Read-Only
 // Whether you declare a component as a function or a class,
 // it must never modify its own props. Consider this sum function
 function sum(a, b) {
