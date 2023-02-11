@@ -1,50 +1,29 @@
 import React from "react";
-import TemperatureInput from "./TemperatureInput";
-import { tryConvert } from "./tryConvert";
-import { toCelsius, toFahrenheit } from "./convert";
-import { BoilingVerdict } from "./BoilingVerdict";
+const ThemeContext = React.createContext({ name: "Hello World" });
 
-// Main
-class Calculator extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleCelsiusChange = this.handleCelsiusChange.bind(this);
-    this.handleFahrenheitChange = this.handleFahrenheitChange.bind(this);
-    this.state = { temperature: "", scale: "c" };
-  }
-
-  handleCelsiusChange(temperature) {
-    this.setState({ scale: "c", temperature });
-  }
-
-  handleFahrenheitChange(temperature) {
-    this.setState({ scale: "f", temperature });
-  }
-
+export default class App extends React.Component {
   render() {
-    const scale = this.state.scale;
-    const temperature = this.state.temperature;
-    const celsius =
-      scale === "f" ? tryConvert(temperature, toCelsius) : temperature;
-    const fahrenheit =
-      scale === "c" ? tryConvert(temperature, toFahrenheit) : temperature;
-
+    console.log("this.context", this.context);
     return (
-      <div>
-        <TemperatureInput
-          scale="c"
-          temperature={celsius}
-          onTemperatureChange={this.handleCelsiusChange}
-        />
-        <TemperatureInput
-          scale="f"
-          temperature={fahrenheit}
-          onTemperatureChange={this.handleFahrenheitChange}
-        />
-        <BoilingVerdict celsius={parseFloat(celsius)} />
-      </div>
+      <div>Hello</div>
     );
   }
 }
 
-export default Calculator;
+App.contextType = ThemeContext;
+
+// function Toolbar() {
+//   return (
+//     <div>
+//       <ThemedButton />
+//     </div>
+//   );
+// }
+
+// class ThemedButton extends React.Component {
+//   render() {
+//     console.log("this.context", this.context);
+//     return <button>{"this.context"}</button>;
+//   }
+// }
+// ThemedButton.contextType = ThemeContext;
