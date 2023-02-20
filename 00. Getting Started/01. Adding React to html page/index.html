@@ -5,8 +5,8 @@
     <title>Add React in One Minute</title>
   </head>
   <body>
-    <p>React with no build tooling.</p>
-    <p>React is loaded as a script tag.</p>
+    <!-- Dom node or container -->
+    <h1>Hello, Prakhar</h1>
     <div id="like_button_container"></div>
 
     <!-- Note: For Development -->
@@ -19,19 +19,22 @@
       crossorigin
     ></script>
 
-     <!-- Note: For Production -->
-    <!-- <script
+    <!-- Load our React component. -->
+    <script src="like_button.js"></script>
+
+   <!--
+    Note: For Production
+    <script
       src="https://unpkg.com/react@18/umd/react.production.min.js"
       crossorigin
     ></script>
     <script
       src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
       crossorigin
-    ></script> -->
+    ></script>
+  -->
 
     <!-- Way to try JSX -->
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-
-    <script src="like_button.js"></script>
   </body>
 </html>
